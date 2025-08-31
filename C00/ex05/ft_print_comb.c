@@ -6,7 +6,7 @@
 /*   By: gde-cast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/30 16:41:24 by gde-cast          #+#    #+#             */
-/*   Updated: 2025/08/30 16:42:43 by gde-cast         ###   ########.fr       */
+/*   Updated: 2025/08/31 13:04:32 by gde-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,8 @@ void	ft_print_comb(void)
 		first++;
 	}
 }
-/*
-int main(void)
+
+/*int main(void)
 {
 	ft_print_comb ();
-}
-*/
+}*/
