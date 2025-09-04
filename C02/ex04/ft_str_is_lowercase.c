@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-cast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:27:14 by gde-cast          #+#    #+#             */
-/*   Updated: 2025/08/31 16:26:34 by gde-cast         ###   ########.fr       */
+/*   Created: 2025/09/04 11:32:53 by gde-cast          #+#    #+#             */
+/*   Updated: 2025/09/04 11:32:58 by gde-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+//#include <stdio.h>
 
-void	ft_is_negative(int n)
+int	ft_str_is_lowercase(char *str)
 {
-	if (n >= 0)
-		write(1, "P", 1);
-	else if (n < 0)
-		write(1, "N", 1);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] >= 'a') && (str[i] <= 'z'))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }
-/*int	main (void)
+
+/*int    main(void)
 {
-	ft_is_negative (-7);
-	ft_is_negative (10);
-	ft_is_negative (-4568);
-	return (0);
+    int islower;
+    char a[] = "welcometothefuture";
+    islower = ft_str_is_lowercase(a);
+    printf("%d\n", islower);
 }*/

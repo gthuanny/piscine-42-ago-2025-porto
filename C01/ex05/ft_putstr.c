@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-cast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:27:14 by gde-cast          #+#    #+#             */
-/*   Updated: 2025/08/31 16:26:34 by gde-cast         ###   ########.fr       */
+/*   Created: 2025/09/03 14:43:19 by gde-cast          #+#    #+#             */
+/*   Updated: 2025/09/03 16:19:18 by gde-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+#include <unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_putstr(char *str)
 {
-	if (n >= 0)
-		write(1, "P", 1);
-	else if (n < 0)
-		write(1, "N", 1);
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	write (1, str, i);
 }
-/*int	main (void)
+
+/*int main(void)
 {
-	ft_is_negative (-7);
-	ft_is_negative (10);
-	ft_is_negative (-4568);
+	ft_putstr("Ola Gaby");
 	return (0);
 }*/

@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-cast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:27:14 by gde-cast          #+#    #+#             */
-/*   Updated: 2025/08/31 16:26:34 by gde-cast         ###   ########.fr       */
+/*   Created: 2025/09/03 14:34:44 by gde-cast          #+#    #+#             */
+/*   Updated: 2025/09/03 14:36:52 by gde-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+#include <unistd.h>  
 
-void	ft_is_negative(int n)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	if (n >= 0)
-		write(1, "P", 1);
-	else if (n < 0)
-		write(1, "N", 1);
+	*div = a / b;
+	*mod = a % b;
 }
-/*int	main (void)
+
+/*#include <stdio.h>
+
+int main(void)
 {
-	ft_is_negative (-7);
-	ft_is_negative (10);
-	ft_is_negative (-4568);
-	return (0);
+	int a;
+	int b;
+	int mod;
+	int div;
+
+	a = 10;
+	b = 20;
+
+	printf("a : %d, b : %d\n", a, b);
+
+	ft_div_mod(a, b, &div, &mod);
+
+	printf("a : %d, b : %d, div : %d, mod : %d\n");
 }*/

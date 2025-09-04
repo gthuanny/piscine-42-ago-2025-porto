@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-cast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:27:14 by gde-cast          #+#    #+#             */
-/*   Updated: 2025/08/31 16:26:34 by gde-cast         ###   ########.fr       */
+/*   Created: 2025/09/03 14:37:24 by gde-cast          #+#    #+#             */
+/*   Updated: 2025/09/03 14:42:35 by gde-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+//#include <stdio.h> 
 
-void	ft_is_negative(int n)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	if (n >= 0)
-		write(1, "P", 1);
-	else if (n < 0)
-		write(1, "N", 1);
+	int	div;
+	int	mod;
+
+	div = *a;
+	mod = *b;
+	*a = div / mod;
+	*b = div % mod;
 }
-/*int	main (void)
+
+/*
+int	main(void)
 {
-	ft_is_negative (-7);
-	ft_is_negative (10);
-	ft_is_negative (-4568);
-	return (0);
-}*/
+	int	a;
+	int	b;
+
+	a = 13;
+	b = 5;
+	printf("a: %i, b: %i\n", a, b);
+	ft_ultimate_div_mod(&a, &b);
+	printf("a : %i, b : %i\n", a, b);
+}
+*/

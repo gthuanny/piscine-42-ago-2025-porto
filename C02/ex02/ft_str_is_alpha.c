@@ -1,28 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-cast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:27:14 by gde-cast          #+#    #+#             */
-/*   Updated: 2025/08/31 16:26:34 by gde-cast         ###   ########.fr       */
+/*   Created: 2025/09/04 10:48:54 by gde-cast          #+#    #+#             */
+/*   Updated: 2025/09/04 10:49:16 by gde-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+//#include <stdio.h>
 
-void	ft_is_negative(int n)
+int	ft_str_is_alpha(char *str)
 {
-	if (n >= 0)
-		write(1, "P", 1);
-	else if (n < 0)
-		write(1, "N", 1);
+	int		i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if ((str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z'))
+		{
+			return (0);
+		}
+		i++;
+	}
+	return (1);
 }
-/*int	main (void)
+
+/*int    main(void)
 {
-	ft_is_negative (-7);
-	ft_is_negative (10);
-	ft_is_negative (-4568);
-	return (0);
+    int is_alpha;
+    char a[] = "welcometothefuture";
+    is_alpha = ft_str_is_alpha(a);
+    printf("%d\n", is_alpha);
 }*/

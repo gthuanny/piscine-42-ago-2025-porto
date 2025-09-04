@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-cast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:27:14 by gde-cast          #+#    #+#             */
-/*   Updated: 2025/08/31 16:26:34 by gde-cast         ###   ########.fr       */
+/*   Created: 2025/09/04 10:53:15 by gde-cast          #+#    #+#             */
+/*   Updated: 2025/09/04 10:53:35 by gde-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+//#include <stdio.h> 
 
-void	ft_is_negative(int n)
+int	ft_str_is_printable(char *str)
 {
-	if (n >= 0)
-		write(1, "P", 1);
-	else if (n < 0)
-		write(1, "N", 1);
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if ((str[i] >= 32) && (str[i] <= 126))
+			i++;
+		else
+			return (0);
+	}
+	return (1);
 }
-/*int	main (void)
+
+/*int	main()
 {
-	ft_is_negative (-7);
-	ft_is_negative (10);
-	ft_is_negative (-4568);
-	return (0);
+	int myfuture;
+	char z[] = "\n";
+	myfuture = ft_str_is_printable(z);
+	printf("%d\n", myfuture);
 }*/

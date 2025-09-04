@@ -1,28 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gde-cast <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/08/30 15:27:14 by gde-cast          #+#    #+#             */
-/*   Updated: 2025/08/31 16:26:34 by gde-cast         ###   ########.fr       */
+/*   Created: 2025/09/03 15:02:14 by gde-cast          #+#    #+#             */
+/*   Updated: 2025/09/03 15:02:40 by gde-cast         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h> 
+#include <unistd.h>
 
-void	ft_is_negative(int n)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	if (n >= 0)
-		write(1, "P", 1);
-	else if (n < 0)
-		write(1, "N", 1);
+	int	i;
+	int	tmp;
+
+	i = 0;
+	while (i < size / 2)
+	{
+		tmp = tab[i];
+		tab[i] = tab[size - 1 - i];
+		tab[size - 1 - i] = tmp;
+		i++;
+	}
 }
-/*int	main (void)
+/*#include <stdio.h>
+
+int	main(void)
 {
-	ft_is_negative (-7);
-	ft_is_negative (10);
-	ft_is_negative (-4568);
+	int arr[] = {1, 2, 3, 4, 5};
+	int size = 5;
+	int i = 0;
+
+	ft_rev_int_tab(arr, size);
+	while (i < size)
+	{
+		printf("%d ", arr[i]);
+		i++;
+	}
+	printf("\n");
 	return (0);
 }*/
